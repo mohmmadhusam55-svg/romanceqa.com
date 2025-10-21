@@ -1,0 +1,11 @@
+i waant to creat a website to view our products and services and give an infrotmation about us and talk about us .
+we already have a recent web page ( romanceqa.com).
+
+i want the page to be in three langauages ( arabic , english , turkish ) 
+
+make the  buttons more active and live ( for example , the language buttons make it like an earth , while changing the langauge make it move ) , and make other buttones active too
+
+
+can you add @https://maps.app.goo.gl/p2koJ5B1kUTyi8Ue7  this location with a map emoji or logo in the adress section , and also pls add the actual adress in this link to the adress section 
+
+

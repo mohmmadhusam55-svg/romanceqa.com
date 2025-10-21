@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5dbc5e">
+    <title>Admin Panel - Romance Trading</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new_styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="left-line"></div>
+    <div class="right-line"></div>
+    
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <img src="Romance logo.jpg" alt="Romance Trading Logo" class="login-logo">
+                <h1>Admin Panel</h1>
+                <p>Romance Trading Order Management</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" required placeholder="Enter admin password">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button type="submit" class="btn btn-primary login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            <div id="login-error" class="login-error" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Invalid password. Please try again.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+        <!-- Top Header -->
+        <header class="top-header" role="banner">
+            <div class="container">
+                <div class="header-row">
+                    <!-- Logo Section -->
+                    <div class="header-logo-section">
+                        <a href="index.html" aria-label="Romance Trading home">
+                            <img class="logo-rt" src="Romance logo.jpg" alt="Romance Trading Logo">
+                        </a>
+                    </div>
+                    
+                    <!-- Admin Title -->
+                    <div class="header-search-section">
+                        <h1 style="color: var(--secondary); font-size: 1.8rem; font-weight: 700; margin: 0;">
+                            <i class="fas fa-cog"></i> Admin Panel
+                        </h1>
+                    </div>
+                    
+                    <!-- Admin Actions -->
+                    <div class="header-nav-section">
+                        <div class="admin-actions">
+                            <button id="refresh-orders" class="btn btn-secondary">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                            <button id="logout-btn" class="btn btn-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="container">
+                <div class="admin-container">
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-orders">0</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="pending-orders">0</h3>
+                            <p>Pending Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon completed">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="completed-orders">0</h3>
+                            <p>Completed Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon revenue">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-revenue">QAR 0</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters and Search -->
+                <div class="admin-controls">
+                    <div class="search-section">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="order-search" placeholder="Search orders by ID, customer info...">
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <select id="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                        <select id="payment-filter">
+                            <option value="all">All Payment Methods</option>
+                            <option value="cash">Cash</option>
+                            <option value="iban">Bank Transfer</option>
+                        </select>
+                        <button id="clear-filters" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Clear Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="notification-settings-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-bell"></i> Notification Settings</h2>
+                        <button id="test-notification" class="btn btn-secondary">
+                            <i class="fas fa-test-tube"></i> Test Notification
+                        </button>
+                    </div>
+                    
+                    <div class="notification-settings-content">
+                        <div class="settings-grid">
+                            <div class="setting-group">
+                                <label class="setting-label">
+                                    <input type="checkbox" id="browser-notifications" checked>
+                                    <span class="checkmark"></span>
+                                    Browser Notifications
+                                </label>
+                                <p class="setting-description">Show desktop notifications for new orders</p>
+                            </div>
+                            
+                            <div class="setting-group">
+                                <label class="setting-label">
+                                    <input type="checkbox" id="email-notifications">
+                                    <span class="checkmark"></span>
+                                    Email Notifications
+                                </label>
+                                <p class="setting-description">Send email alerts for new orders</p>
+                                <input type="email" id="email-address" placeholder="your-email@example.com" style="margin-top: 0.5rem;">
+                            </div>
+                            
+                            <div class="setting-group">
+                                <label class="setting-label">
+                                    <input type="checkbox" id="whatsapp-notifications">
+                                    <span class="checkmark"></span>
+                                    WhatsApp Notifications
+                                </label>
+                                <p class="setting-description">Send WhatsApp messages for new orders</p>
+                                <input type="tel" id="whatsapp-number" placeholder="+974XXXXXXXX" style="margin-top: 0.5rem;">
+                            </div>
+                            
+                            <div class="setting-group">
+                                <label class="setting-label">
+                                    <input type="checkbox" id="notification-sound" checked>
+                                    <span class="checkmark"></span>
+                                    Notification Sound
+                                </label>
+                                <p class="setting-description">Play sound when new orders arrive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-actions">
+                            <button id="save-notification-settings" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save Settings
+                            </button>
+                            <button id="reset-notification-settings" class="btn btn-secondary">
+                                <i class="fas fa-undo"></i> Reset to Default
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="orders-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-list"></i> Orders Management</h2>
+                        <div class="orders-count">
+                            <span id="filtered-orders-count">0</span> orders
+                        </div>
+                    </div>
+                    
+                    <div class="orders-table-container">
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Customer</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody">
+                                <!-- Orders will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div id="no-orders" class="no-orders" style="display: none;">
+                        <i class="fas fa-inbox"></i>
+                        <h3>No orders found</h3>
+                        <p>No orders match your current filters.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Romance Trading. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div id="order-modal" class="order-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-receipt"></i> Order Details</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="order-details">
+                <!-- Order details will be populated by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button id="update-status" class="btn btn-primary">
+                    <i class="fas fa-edit"></i> Update Status
+                </button>
+                <button class="btn btn-secondary close-modal">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Update Modal -->
+    <div id="status-modal" class="status-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-edit"></i> Update Order Status</h2>
+                <button class="close-status-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="new-status">New Status</label>
+                    <select id="new-status">
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status-notes">Notes (Optional)</label>
+                    <textarea id="status-notes" placeholder="Add any notes about this status change..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-status" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Update Status
+                </button>
+                <button class="btn btn-secondary close-status-modal">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="notification-system.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5dbc5e">
+    <title data-lang-key="page.title.retail">Retail Products - Romance Trading</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new_styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="left-line"></div>
+    <div class="right-line"></div>
+    <!-- Top Header -->
+    <header class="top-header" role="banner">
+        <div class="container">
+            <div class="header-row">
+                <!-- Logo Section -->
+                <div class="header-logo-section">
+                    <a href="index.html" aria-label="Romance Trading home">
+                        <img class="logo-rt" src="Romance logo.jpg" alt="Romance Trading Logo">
+                    </a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="header-search-section">
+                    <div class="header-search">
+                        <input type="search" placeholder="Search..." aria-label="Search site" id="site-search">
+                    </div>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <div class="header-nav-section">
+                    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="retail.html" class="nav-link">
+                            <i class="fas fa-th nav-icon"></i>
+                            <span>Products</span>
+                        </a>
+                        <a href="index.html#about" class="nav-link">
+                            <i class="fas fa-info-circle nav-icon"></i>
+                            <span>About Us</span>
+                        </a>
+                        <a href="index.html#contact" class="nav-link">
+                            <i class="fas fa-envelope nav-icon"></i>
+                            <span>Contact</span>
+                        </a>
+                    </nav>
+                    
+                    <!-- Language Selector -->
+                    <div class="language-toggle">
+                        <button class="lang-btn" id="header-lang-toggle" aria-label="Language selection">
+                            <i class="fas fa-globe"></i>
+                            <span>English</span>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown">
+                            <a href="#" class="lang-option active" data-lang="en" data-lang-key="language.english">English</a>
+                            <a href="#" class="lang-option" data-lang="ar" data-lang-key="language.arabic">العربية</a>
+                            <a href="#" class="lang-option" data-lang="tr" data-lang-key="language.turkish">Türkçe</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <!-- Shop Header -->
+            <div class="shop-header">
+                <h1 class="shop-title" data-lang-key="nav.shop">Shop</h1>
+            </div>
+
+            <!-- Collections Sidebar -->
+            <div class="shop-layout">
+                <aside class="collections-sidebar">
+                    <h3 data-lang-key="page.header.collections">Collections</h3>
+                    <div class="collections-list" id="collections-list">
+                        <!-- Collections will be populated by JavaScript -->
+                    </div>
+                    
+                    <!-- Filters -->
+                    <div class="filters-section">
+                        <h4>Filter by</h4>
+                        
+                        <!-- Availability Filter -->
+                        <div class="filter-group">
+                            <h5>Availability</h5>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" id="filter-in-stock" checked>
+                                    <span>In stock</span>
+                                    <span class="count" id="in-stock-count">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" id="filter-out-stock">
+                                    <span>Out of stock</span>
+                                    <span class="count" id="out-stock-count">0</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-group">
+                            <h5 data-lang-key="shop.price">Price</h5>
+                            <div class="price-range">
+                                <div class="price-inputs">
+                                    <input type="number" id="price-min" placeholder="From" min="0">
+                                    <span>to</span>
+                                    <input type="number" id="price-max" placeholder="To" min="0">
+                                </div>
+                                <div class="price-display">
+                                    <span>Highest price: QAR <span id="max-price">0.00</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sort Options -->
+                        <div class="filter-group">
+                            <h5 data-lang-key="shop.sort_by">Sort by</h5>
+                            <select id="sort-options" class="sort-select">
+                                <option value="featured" data-lang-key="shop.featured">Featured</option>
+                                <option value="best-selling" data-lang-key="shop.best_selling">Best selling</option>
+                                <option value="alphabetical-az" data-lang-key="shop.alphabetical_az">Alphabetically, A-Z</option>
+                                <option value="alphabetical-za" data-lang-key="shop.alphabetical_za">Alphabetically, Z-A</option>
+                                <option value="price-low-high" data-lang-key="shop.price_low_high">Price, low to high</option>
+                                <option value="price-high-low" data-lang-key="shop.price_high_low">Price, high to low</option>
+                                <option value="date-old-new" data-lang-key="shop.date_old_new">Date, old to new</option>
+                                <option value="date-new-old" data-lang-key="shop.date_new_old">Date, new to old</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-actions">
+                            <button class="btn btn-secondary" id="clear-filters" data-lang-key="shop.clear_filters">Clear all</button>
+                            <button class="btn btn-primary" id="apply-filters" data-lang-key="shop.apply_filters">Apply</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Area -->
+                <main class="products-area">
+                    <!-- Products Header -->
+                    <div class="products-header">
+                        <div class="products-count">
+                            <span id="products-count">0 products</span>
+                        </div>
+                        <div class="products-pagination">
+                            <span id="pagination-info">1 / 1</span>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="products-grid">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-container">
+                        <button id="load-more-btn" class="btn btn-secondary" style="display: none;" data-lang-key="shop.load_more">
+                            <i class="fas fa-plus"></i> Load More Products
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Romance Trading. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Cart Icon -->
+    <a href="basket.html" class="sticky-cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cart-badge">0</span>
+    </a>
+
+    <script src="translations.js"></script>
+    <script src="products-data.js"></script>
+    <script src="cart.js"></script>
+    <script src="shop-system.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
