@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#5dbc5e">
+    <title data-lang-key="page.title.home">Romance Trading - Products & Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new_styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+
+        <style>
+            /* small demo swatches to show active palette and ensure variables apply */
+            .color-swatches{display:flex;gap:8px;align-items:center;justify-content:center;padding:10px 0}
+            .color-swatches .swatch{width:120px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#fff;box-shadow:0 6px 18px rgba(24,35,82,0.06)}
+            .color-swatches .swatch.white{color:var(--secondary);background:var(--white);border:1px solid rgba(0,0,0,0.06)}
+        </style>
+
+</head>
+<body>
+    <div class="left-line"></div>
+    <div class="right-line"></div>
+    <!-- Top Header -->
+    <header class="top-header" role="banner">
+        <div class="container">
+            <div class="header-row">
+                <!-- Logo Section -->
+                <div class="header-logo-section">
+                    <a href="index.html" aria-label="Romance Trading home">
+                        <img class="logo-rt" src="Romance logo.jpg" alt="Romance Trading Logo">
+                    </a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="header-search-section">
+                    <div class="header-search">
+                        <input type="search" placeholder="Search..." aria-label="Search site" id="site-search">
+                    </div>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <div class="header-nav-section">
+                    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="index.html#about" class="nav-link">
+                            <i class="fas fa-info-circle nav-icon"></i>
+                            <span>About Us</span>
+                        </a>
+                        <a href="index.html#products" class="nav-link">
+                            <i class="fas fa-th nav-icon"></i>
+                            <span>Products</span>
+                        </a>
+                        <a href="index.html#contact" class="nav-link">
+                            <i class="fas fa-envelope nav-icon"></i>
+                            <span>Contact</span>
+                        </a>
+                    </nav>
+                    
+                    <!-- Language Selector -->
+                    <div class="language-toggle">
+                        <button class="lang-btn" id="header-lang-toggle" aria-label="Language selection">
+                            <i class="fas fa-globe"></i>
+                            <span>English</span>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown">
+                            <a href="#" class="lang-option active" data-lang="en" data-lang-key="language.english">English</a>
+                            <a href="#" class="lang-option" data-lang="ar" data-lang-key="language.arabic">العربية</a>
+                            <a href="#" class="lang-option" data-lang="tr" data-lang-key="language.turkish">Türkçe</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Admin Link (Hidden) -->
+                    <a href="admin.html" class="admin-link" style="display: none;" title="Admin Panel">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-icon">
+                <i class="fas fa-hand-sparkles swing-icon"></i>
+            </div>
+            <h1 class="hero-title" data-lang-key="hero.title">Welcome to Romance Trading</h1>
+            
+            <p class="hero-subtitle fade-in-up" data-lang-key="hero.subtitle">Your trusted partner in quality products and exceptional services</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary pulse-animation" data-lang-key="hero.contact"><i class="fas fa-phone"></i> Get in Touch</a>
+                <a href="#products" class="btn btn-secondary glow-animation" data-lang-key="hero.explore"><i class="fas fa-store swing-icon"></i> Explore Products</a>
+            </div>
+            
+        </div>
+        <div class="hero-visual">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="about.title">About Us</h2>
+            <div class="about-content" style="grid-template-columns: 1fr;">
+                
+                <div class="about-image">
+                                        <div class="products-grid">
+                        <div class="product-wrapper">
+                            <h3><i class="fas fa-info-circle swing-icon"></i> <span data-lang-key="about.box1.title">Who We Are?</span></h3>
+                            <div class="product-card product-card-green">
+                                <div class="product-content">
+                                    <p data-lang-key="about.box1.description">Welcome to Romance Trading. With over 30 years of experience, we have built strong partnerships with international and local manufacturers, establishing a strong presence in Qatar's key markets. We specialize in disposables, daily consumables, kitchen and home appliances, storage goods, healthcare products, and cosmetics. By importing high-quality products from various countries, we meet the diverse needs of our customers across Qatar. In addition to trading, we own and operate several brands, all committed to excellence and innovation. At Romance Trading, your satisfaction is our priority. Thank you for choosing us as your trusted partner.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrapper">
+                            <h3><i class="fas fa-bullseye swing-icon"></i> <span data-lang-key="about.box2.title">Our Vision</span></h3>
+                            <div class="product-card product-card-green">
+                                <div class="product-content">
+                                    <p data-lang-key="about.box2.description">To be the leading provider of essential consumer goods, daily consumables, cosmetics and healthcare products in the region, known for quality, innovation and customer satisfaction.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-wrapper">
+                            <h3><i class="fas fa-handshake swing-icon"></i> <span data-lang-key="about.box3.title">Collaborate With Us</span></h3>
+                            <div class="product-card product-card-green">
+                                <div class="product-content">
+                                    <p data-lang-key="about.box3.description">We are open to partnering with companies outside Qatar to bring high quality products to Doha. If you are interested in partnering with us, please <a href="#contact">contact us</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Products Section -->
+    <section id="products" style="
+  position: relative;
+  text-align: center;
+  padding: 120px 0; /* Changed from 120px 20px */
+  background: var(--white); /* Changed from #f6f7f8 */
+">
+  
+
+  <!-- Text content -->
+  <div style="position: relative; z-index: 2;">
+    <h1 style="font-size: 42px; font-weight: 700; margin-bottom: 12px; color: var(--secondary);" data-lang-key="products.title">
+      Our Products
+    </h1>
+    <p data-lang-key="products.enjoy">enjoy your shopping with us , <a href="#contact" class="animated-link" data-lang-key="products.contact_link">contact us</a> for more infroamtion</p>
+    
+    <div>
+      <a href="retail.html" class="btn btn-primary"><i class="fas fa-shopping-cart swing-icon"></i> <span data-lang-key="products.retail">Retail</span></a>
+      <a href="wholesale.html" class="btn btn-secondary"><i class="fas fa-industry"></i> <span data-lang-key="products.wholesale">Wholesale</span></a>
+    </div>
+  </div>
+</section>
+    
+
+    </section>
+
+    <!-- Products Section -->
+
+    </section>
+
+    <!-- Services Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in" data-lang-key="contact.title">Contact Us</h2>
+            <div class="contact-content fade-in">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt swing-icon" aria-hidden="true"></i>
+                        <div>
+                            <h4 data-lang-key="contact.address.title">Address</h4>
+                            <div class="address-line">
+                                <a href="https://maps.app.goo.gl/2Jjgz9N6pWQkbwBQ8" target="_blank" rel="noopener noreferrer" class="clickable-address" aria-label="Open location in Google Maps">
+                                    <p data-lang-key="contact.address.text">Doha, Qatar</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone swing-icon"></i>
+                        <div>
+                            <h4 data-lang-key="contact.phone.title">Phone</h4>
+                            <p data-lang-key="contact.phone.number">00974 55033715</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope swing-icon"></i>
+                        <div>
+                            <h4 data-lang-key="contact.email.title">Email</h4>
+                            <p data-lang-key="contact.email.address">info@romanceqa.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required data-lang-key="contact.form.name">
+                        <input type="email" name="email" placeholder="Your Email" required data-lang-key="contact.form.email">
+                        <textarea name="message" placeholder="Your Message" rows="5" required data-lang-key="contact.form.message"></textarea>
+                        <button type="submit" class="btn btn-primary" data-lang-key="contact.form.send">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                
+                
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer.rights">&copy; 2024 Romance Trading. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <a href="basket.html" class="sticky-cart-icon">
+        <i class="fas fa-shopping-basket"></i>
+        <span class="cart-badge" id="cart-badge">0</span>
+    </a>
+</body>
+</html>
